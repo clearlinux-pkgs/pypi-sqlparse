@@ -1,3 +1,28 @@
+Release 0.4.3 (Sep 23, 2022)
+----------------------------
+
+Enhancements
+
+* Add support for DIV operator (pr664, by chezou).
+* Add support for additional SPARK keywords (pr643, by mrmasterplan).
+* Avoid tokens copy (pr622, by living180).
+* Add REGEXP as a comparision (pr647, by PeterSandwich).
+* Add DISTINCTROW keyword for MS Access (issue677).
+* Improve parsing of CREATE TABLE AS SELECT (pr662, by chezou).
+
+Bug Fixes
+
+* Fix spelling of INDICATOR keyword (pr653, by ptld).
+* Fix formatting error in EXTRACT function (issue562, issue670, pr676, by ecederstrand).
+* Fix bad parsing of create table statements that use lower case (issue217, pr642, by mrmasterplan).
+* Handle backtick as valid quote char (issue628, pr629, by codenamelxl).
+* Allow any unicode character as valid identifier name (issue641).
+
+Other
+
+* Update github actions to test on Python 3.10 as well (pr661, by cclaus).
+
+
 Release 0.4.2 (Sep 10, 2021)
 ----------------------------
 
@@ -78,7 +103,7 @@ Bug Fixes
 * Remove support for parsing double slash comments introduced in
   0.3.0 (issue456) as it had some side-effects with other dialects and
   doesn't seem to be widely used (issue476).
-* Restrict detection of alias names to objects that acutally could
+* Restrict detection of alias names to objects that actually could
   have an alias (issue455, adopted some parts of pr509 by john-bodley).
 * Fix parsing of date/time literals (issue438, by vashek).
 * Fix initialization of TokenList (issue499, pr505 by john-bodley).

@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6DB3F0E3E0B84F81 (albrecht.andi@gmail.com)
 #
 Name     : pypi-sqlparse
-Version  : 0.4.2
-Release  : 7
-URL      : https://files.pythonhosted.org/packages/32/fe/8a8575debfd924c8160295686a7ea661107fc34d831429cce212b6442edb/sqlparse-0.4.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/32/fe/8a8575debfd924c8160295686a7ea661107fc34d831429cce212b6442edb/sqlparse-0.4.2.tar.gz
-Source1  : https://files.pythonhosted.org/packages/32/fe/8a8575debfd924c8160295686a7ea661107fc34d831429cce212b6442edb/sqlparse-0.4.2.tar.gz.asc
+Version  : 0.4.3
+Release  : 8
+URL      : https://files.pythonhosted.org/packages/ba/fa/5b7662b04b69f3a34b8867877e4dbf2a37b7f2a5c0bbb5a9eed64efd1ad1/sqlparse-0.4.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/ba/fa/5b7662b04b69f3a34b8867877e4dbf2a37b7f2a5c0bbb5a9eed64efd1ad1/sqlparse-0.4.3.tar.gz
+Source1  : https://files.pythonhosted.org/packages/ba/fa/5b7662b04b69f3a34b8867877e4dbf2a37b7f2a5c0bbb5a9eed64efd1ad1/sqlparse-0.4.3.tar.gz.asc
 Summary  : A non-validating SQL parser.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -25,18 +25,12 @@ BuildRequires : pypi-tox
 BuildRequires : pypi-virtualenv
 
 %description
+python-sqlparse - Parse SQL statements
 ======================================
-        
-        |buildstatus|_
-        |coverage|_
-        |docs|_
-        
-        .. docincludebegin
-        
-        sqlparse is a non-validating SQL parser for Python.
-        It provides support for parsing, splitting and formatting SQL statements.
-        
-        The module is compatible with Python 3.5+ and released under the terms of the
+|buildstatus|_
+|coverage|_
+|docs|_
+|packageversion|_
 
 %package bin
 Summary: bin components for the pypi-sqlparse package.
@@ -75,10 +69,10 @@ python3 components for the pypi-sqlparse package.
 
 
 %prep
-%setup -q -n sqlparse-0.4.2
-cd %{_builddir}/sqlparse-0.4.2
+%setup -q -n sqlparse-0.4.3
+cd %{_builddir}/sqlparse-0.4.3
 pushd ..
-cp -a sqlparse-0.4.2 buildavx2
+cp -a sqlparse-0.4.3 buildavx2
 popd
 
 %build
@@ -86,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656369606
+export SOURCE_DATE_EPOCH=1664206785
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,7 +105,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-sqlparse
-cp %{_builddir}/sqlparse-0.4.2/LICENSE %{buildroot}/usr/share/package-licenses/pypi-sqlparse/c4c4e71afeed48a083c414f8b157f11a3676954a
+cp %{_builddir}/sqlparse-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-sqlparse/c4c4e71afeed48a083c414f8b157f11a3676954a || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
