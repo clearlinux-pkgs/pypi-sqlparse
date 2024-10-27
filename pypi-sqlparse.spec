@@ -7,7 +7,7 @@
 #
 Name     : pypi-sqlparse
 Version  : 0.5.1
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/73/82/dfa23ec2cbed08a801deab02fe7c904bfb00765256b155941d789a338c68/sqlparse-0.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/73/82/dfa23ec2cbed08a801deab02fe7c904bfb00765256b155941d789a338c68/sqlparse-0.5.1.tar.gz
 Summary  : A non-validating SQL parser.
